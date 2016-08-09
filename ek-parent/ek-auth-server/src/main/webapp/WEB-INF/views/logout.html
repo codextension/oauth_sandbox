@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="/fragments/base_page">
+<head>
+    <title th:text="#{signout}"></title>
+</head>
+<body>
+<div layout:fragment="body">
+    <div class="container width-400px">
+        <form class="form-signin" name="logoutForm" th:action="@{/logout}" method="POST">
+            <h2 class="form-signin-heading" th:text="#{signout.confirmation}"></h2>
+            <input type="hidden" name="redirect" id="redirect" th:value="${redirectUrl}"/>
+
+            <button class="btn btn-lg btn-primary btn-block" type="submit">
+                <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> <span th:text="#{signout}"/>
+            </button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

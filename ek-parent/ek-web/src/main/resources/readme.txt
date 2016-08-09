@@ -1,0 +1,1 @@
+-Djavax.net.ssl.trustStore=C:/Users/eelkhour/.keystore -Djavax.net.ssl.trustStorePassword=changeit

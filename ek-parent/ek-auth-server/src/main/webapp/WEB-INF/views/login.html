@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+      layout:decorator="/fragments/base_page">
+<head>
+    <title>Login</title>
+</head>
+<body>
+<div layout:fragment="body">
+    <form name="loginForm" th:action="@{/login}" method="POST">
+        <div class="container width-400px">
+            <div class="row">
+                <h2 class="form-signin-heading" th:text="#{signin.header}"></h2>
+            </div>
+            <div class="row alert alert-danger alert-dismissible fade in" role="alert"
+                 th:if="${param.error != null and session['SPRING_SECURITY_LAST_EXCEPTION'] != null}">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <p th:text="${session['SPRING_SECURITY_LAST_EXCEPTION'].message}"></p>
+            </div>
+            <div class="row alert alert-info alert-dismissible fade in" role="alert" th:if="${param.logout != null}"
+                 sec:authorize="isAnonymous()">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <p th:text="#{signout.confirmation.success}"></p>
+            </div>
+            <div class="row input-group margin-bottom-sm">
+                <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
+                <input name="username" id="username" class="form-control input-lg" type="text"
+                       th:placeholder="#{username}"
+                       required="required" autofocus="autofocus"/>
+            </div>
+            <div class="row input-group margin-bottom-sm">
+                <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+                <input name="password" id="password" class="form-control input-lg" type="password"
+                       th:placeholder="#{password}"
+                       required="required"/>
+            </div>
+            <div class="row">
+                <button class="btn btn-lg btn-primary btn-block" type="submit">
+                    <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> <span th:text="#{signin}"/>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>

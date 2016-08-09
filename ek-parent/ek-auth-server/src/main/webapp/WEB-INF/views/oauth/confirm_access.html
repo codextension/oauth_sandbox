@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="/fragments/base_page">
+<head>
+<title>Confirm access</title>
+</head>
+<body>
+	<div layout:fragment="body">
+	<script type="text/javascript">
+	$(function() {
+        $.fn.bootstrapSwitch.defaults.size = 'large';
+        $(".bs-switch").bootstrapSwitch();
+        $(".bs-switch").on('switchChange.bootstrapSwitch', function (event, state) {
+            event.currentTarget.value = state;
+        });
+    });
+	</script>
+		<form name="f" th:action="@{/oauth/authorize}" method="POST">
+			<div class="container width-400px">
+				<div class="row">
+					<h3 class="form-signin-heading" th:text="#{approve.header(${authorizationRequest.clientId})}"></h3>
+				</div>
+				<div class="row input-group margin-bottom-sm" th:each="s : ${authorizationRequest.scope}">
+                    <input th:attr="data-label-text=#{'scope.' + ${s}}" th:attrappend="data-on-text=#{allow}"
+                           th:attrprepend="data-off-text=#{deny}" data-handle-width="167" data-on-color="success"
+                           data-off-color="danger" type="checkbox" th:id="${'scope.' + s}" th:name="${'scope.' + s}"
+                           class="bs-switch"/>
+				</div>
+				<div class="row">
+					<input name='user_oauth_approval' value='true' type='hidden'/>
+					<button class="btn btn-lg btn-primary btn-block" type="submit">
+                        <span class="fa fa-unlock" aria-hidden="true"></span>
+                        <span th:text="#{authorize}"/>
+					</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

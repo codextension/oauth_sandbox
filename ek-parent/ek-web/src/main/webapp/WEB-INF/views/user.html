@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <script th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/3.3.5/js/bootstrap.min.js}"></script>
+    <script th:src="@{/webjars/angularjs/1.4.7/angular.min.js}"></script>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/3.3.5/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/3.3.5/css/bootstrap-theme.css}"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<p th:text="'Hello ' + ${user} + '!'"/>
+<form name="f" th:action="@{/logout}" method="POST">
+    <table>
+        <tbody>
+        <tr>
+            <td colspan="2"><input name="submit" type="submit" class="btn btn-default" value="Logout"/></td>
+        </tr>
+        </tbody>
+    </table>
+</form>
+</body>
+</html>
