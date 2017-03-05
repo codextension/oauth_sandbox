@@ -31,7 +31,7 @@ import java.security.KeyPair;
 public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
 
     @Autowired
-    @Qualifier("h2DataSource")
+    @Qualifier("anotherH2DataSource")
     private DataSource datasource;
 
     @Autowired

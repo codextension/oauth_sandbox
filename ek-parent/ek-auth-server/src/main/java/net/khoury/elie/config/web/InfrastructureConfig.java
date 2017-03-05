@@ -26,7 +26,7 @@ public class InfrastructureConfig {
     public static final String NET_KHOURY_ELIE_MODEL = "net.khoury.elie.model";
 
     @Autowired
-    @Qualifier("h2DataSource")
+    @Qualifier("anotherH2DataSource")
     private DataSource dataSource;
 
     @Bean
@@ -42,7 +42,7 @@ public class InfrastructureConfig {
 
         HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         vendorAdapter.setDatabase(Database.H2);
-        vendorAdapter.setGenerateDdl(true);
+        vendorAdapter.setGenerateDdl(false);
         vendorAdapter.setShowSql(true);
 
         LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();

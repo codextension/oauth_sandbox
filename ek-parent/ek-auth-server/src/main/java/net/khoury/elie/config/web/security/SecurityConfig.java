@@ -1,6 +1,5 @@
 package net.khoury.elie.config.web.security;
 
-import com.mysql.jdbc.Driver;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -50,7 +49,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         //@formatter:off
         authManagerBuilder
                 .jdbcAuthentication()
-                .dataSource(h2DataSource())
+                .dataSource(anotherH2DataSource())
                 .passwordEncoder(getPasswordEncoder())
                 .getUserDetailsService()
                 .setEnableGroups(true);
@@ -93,9 +92,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Bean
-    public DataSource mySqlDataSource() {
+    public DataSource anotherH2DataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource(dbUrl, dbUsername, dbPassword);
-        dataSource.setDriverClassName(Driver.class.getName());
+        dataSource.setDriverClassName(org.h2.Driver.class.getName());
         return dataSource;
     }
 
