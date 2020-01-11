@@ -41,7 +41,7 @@
         <hibernate-ehcache.version>5.0.3.Final</hibernate-ehcache.version>
         <spring-expression.version>4.2.3.RELEASE</spring-expression.version>
         <spring-tx.version>4.2.3.RELEASE</spring-tx.version>
-        <spring-data-jpa.version>1.9.1.RELEASE</spring-data-jpa.version>
+        <spring-data-jpa.version>1.11.23.RELEASE</spring-data-jpa.version>
         <spring-orm.version>4.2.3.RELEASE</spring-orm.version>
         <bootstrap-switch.version>3.3.2</bootstrap-switch.version>
         <jquery-ui.version>1.11.4</jquery-ui.version>
