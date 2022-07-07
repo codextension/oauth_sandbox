@@ -39,7 +39,7 @@
         <hibernate-search-orm.version>5.5.0.Final</hibernate-search-orm.version>
         <hibernate-entitymanager.version>5.0.1.Final</hibernate-entitymanager.version>
         <hibernate-ehcache.version>5.0.3.Final</hibernate-ehcache.version>
-        <spring-expression.version>4.2.3.RELEASE</spring-expression.version>
+        <spring-expression.version>5.2.21.RELEASE</spring-expression.version>
         <spring-tx.version>4.2.3.RELEASE</spring-tx.version>
         <spring-data-jpa.version>1.9.1.RELEASE</spring-data-jpa.version>
         <spring-orm.version>4.2.3.RELEASE</spring-orm.version>
