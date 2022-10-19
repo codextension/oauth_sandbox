@@ -23,7 +23,7 @@
         <spring-security-config.version>4.0.2.RELEASE</spring-security-config.version>
         <spring-aop.version>4.2.2.RELEASE</spring-aop.version>
         <thymeleaf-spring4.version>2.1.4.RELEASE</thymeleaf-spring4.version>
-        <jackson.version>2.6.3</jackson.version>
+        <jackson.version>2.13.4.1</jackson.version>
         <h2.version>1.4.190</h2.version>
         <spring-security-jwt.version>1.0.3.RELEASE</spring-security-jwt.version>
         <slf4j.version>1.7.12</slf4j.version>
